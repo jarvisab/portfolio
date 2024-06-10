@@ -12,7 +12,7 @@ export default function HeroBanner() {
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold sm:text-4xl py-2 text-gd text-center my-4 rounded-tl-xl rounded-br-xl sm:max-w-3xl sm:mx-auto"
       >
-        <p className="font-light">Hi, I'm</p>Jarvis Al Baasith
+        <p className="font-light">Hi, I&apos;m</p>Jarvis Al Baasith
       </motion.h2>
       <h3 className="text-[12px] sm:text-lg mt-4 py-2 pl-1 dark:text-neutral-200 text-center">
         <Typewriter
