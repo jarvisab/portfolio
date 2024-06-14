@@ -15,7 +15,7 @@ export default function Projects() {
       <div>
         {projects.map((item) => (
           <div key={item.id}>
-            <div className="flex items-center justify-between bg-slate-200 rounded-md my-4 dark:bg-slate-700">
+            <div className="flex items-center justify-between bg-transparent border-2 border-zinc-900 dark:border-blue-100 rounded-md my-4">
               <h4 className="font-bold px-4 py-2 text-slate-700 text-gd text-lg">
                 {item.title}
               </h4>
@@ -40,7 +40,7 @@ export default function Projects() {
                   <PhotoView src={image} key={item.id + index}>
                     <img
                       src={image}
-                      alt=""
+                      alt={`${item.title} ${index}`}
                       key={item.id + index}
                       style={{ height: '120px'}}
                       className="projects-img h-12"
@@ -64,7 +64,7 @@ export default function Projects() {
       </div>
 
       <div className="mb-1">
-        <div className="flex items-center justify-between bg-slate-200 rounded-md my-4 dark:bg-slate-700">
+        <div className="flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md my-4">
           <h4 className="font-bold px-4 py-2 text-slate-700 text-gd text-lg">
             Others (Websites, Apps, Tests, etc)
           </h4>
@@ -76,7 +76,7 @@ export default function Projects() {
               <PhotoView src={image} key={index}>
                 <img
                   src={image}
-                  alt=""
+                  alt={`Others ${index}`}
                   key={index}
                   style={{ height: '120px'}}
                   className="projects-img"

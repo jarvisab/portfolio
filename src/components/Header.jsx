@@ -35,6 +35,13 @@ export default function Header() {
     };
   }, []);
 
+  const links = [
+    { href: "/", text: "Home" },
+    { href: "/projects", text: "Projects" },
+    { href: "/gallery", text: "Gallery" },
+    { href: "/contact", text: "Contact" }
+  ];
+
   // Get Menu (for mobile)
   const getMenu = () => (
     <AnimatePresence>
@@ -44,7 +51,7 @@ export default function Header() {
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{ type: "spring", duration: 0.3 }}
-          className="text-4xl p-8 absolute flex flex-col justify-center top-0 border-2 rounded-md z-10 bg-gray-900 text-neutral-300 w-full h-screen overflow-y-hidden"
+          className="text-4xl p-8 absolute flex flex-col justify-center top-0 border-2 rounded-md z-10 bg-zinc-900 text-neutral-300 w-full h-screen overflow-y-hidden"
         >
           <div className="w-full bg-transparent px-2 mb-8">
             <div className="flex justify-between items-center text-lg mb-4">
@@ -68,50 +75,32 @@ export default function Header() {
           </div>
 
 
-          <Link href="/" onClick={handleShow} className="menu-link">
-            Home
-          </Link>
-          <Link
-            href="/projects"
-            onClick={handleShow}
-            className="menu-link"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/gallery"
-            onClick={handleShow}
-            className="menu-link"
-          >
-            Gallery
-          </Link>
-          <Link href="/contact"
-            onClick={handleShow}
-            className="menu-link"
-          >
-            Contact
-          </Link>
+          {links.map((link, index) => (
+            <Link key={index}
+              href={link.href}
+              onClick={handleShow}
+              className="menu-link"
+            >
+              {link.text}
+            </Link>
+          ))}
         </motion.div>
       )}
     </AnimatePresence>
   );
 
   return (
-    <header className="flex md:justify-center max-md:justify-center items-center bg-white text-slate-800 py-3 md:border-b-2 sm:mx-3 lg:mx-0 dark:text-neutral-200 dark:bg-gray-900 sticky top-0 z-10">
+    <header className="flex md:justify-center max-md:justify-center items-center bg-white text-slate-800 py-3 md:border-b-2 sm:mx-3 lg:mx-0 dark:text-neutral-200 dark:bg-zinc-900 sticky top-0 z-10">
 
       <nav className="hidden md:flex justify-between items-center">
-        <Link href="/" className="menu-link">
-          Home
-        </Link>
-        <Link href="/projects" className="menu-link">
-          Projects
-        </Link>
-        <Link href="/gallery" className="menu-link">
-          Gallery
-        </Link>
-        <Link href="/contact" className="menu-link">
-          Contact
-        </Link>
+        {links.map((link, index) => (
+          <Link key={index}
+            href={link.href}
+            className="menu-link"
+          >
+            {link.text}
+          </Link>
+        ))}
       </nav>
 
       {/* Mobile Bottom Navbar */}
@@ -127,7 +116,7 @@ export default function Header() {
               ease: "easeInOut"
             }
           }}
-          className="border-2 border-white fixed bottom-0 w-1/2 p-4 bg-slate-600 text-white cursor-pointer z-50 md:hidden rounded-t-xl flex justify-center"
+          className="border-2 border-white dark:border-black fixed bottom-0 w-1/2 p-4 bg-blue-100 text-black cursor-pointer z-50 md:hidden rounded-t-xl flex justify-center"
           onClick={handleShow}
         >
           {!hasBeenShown && <p className="text-xs mr-4">Click to Open</p>}
@@ -137,7 +126,7 @@ export default function Header() {
             transition={{ duration: 0.4 }}
             className="w-fit h-fit"
           >
-            <FaChevronUp />
+            <FaChevronUp className="dark:fill-black" />
           </motion.div>
         </motion.div>
       )}

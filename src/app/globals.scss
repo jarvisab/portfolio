@@ -14,7 +14,7 @@ svg {
 }
 
 .text-gd {
-  @apply dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-tr dark:text-[#f2ecff] tracking-wide;
+  @apply dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-tr dark:text-blue-100 tracking-wide;
 }
 
 .title {
@@ -22,11 +22,11 @@ svg {
 }
 
 .menu-link {
-  @apply max-md:py-2 md:py-1 md:ml-2 px-3 hover:bg-slate-100 dark:hover:bg-slate-700 transition duration-300 rounded;
+  @apply max-md:py-2 md:py-1 md:ml-2 px-3 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition duration-300 rounded;
 }
 
 .cv-cl {
-  @apply flex justify-center items-center gap-2 dark:border px-4 py-1 rounded-md hover:bg-slate-200 transition-all duration-300 dark:text-neutral-200 dark:hover:bg-slate-700;
+  @apply flex justify-center items-center gap-2 dark:border px-4 py-1 rounded-md hover:bg-blue-100 hover:dark:text-zinc-900 transition-all duration-300 dark:text-neutral-200 dark:hover:bg-blue-200;
 }
 
 .skills-icon {
@@ -34,7 +34,7 @@ svg {
 }
 
 .timeline-item {
-  @apply py-1 px-2 pl-3 text-sm sm:text-lg bg-transparent hover:bg-slate-200 rounded text-slate-600 flex items-center transition duration-300 dark:text-neutral-200 dark:bg-transparent dark:hover:bg-slate-700;
+  @apply py-1 px-2 pl-3 text-sm sm:text-lg bg-transparent hover:bg-neutral-200 rounded text-slate-600 flex items-center transition duration-300 dark:text-neutral-200 dark:hover:bg-neutral-700;
 }
 
 .footer-icon {
@@ -68,12 +68,11 @@ svg {
 }
 
 .flare {
-  @apply fixed border-2 rounded-full mix-blend-screen pointer-events-none;
-  border-color: #8d9dc1;
+  @apply fixed border-2 border-blue-200 rounded-full mix-blend-screen pointer-events-none;
   transform: translate(-50%, -50%);
   z-index: 999999;
   backdrop-filter: blur(1px);
-  background-color: #000;
+  background-color: transparent;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   cursor: none;
 }

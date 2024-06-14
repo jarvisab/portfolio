@@ -8,7 +8,7 @@ export default function HocLayout({ children }) {
 
   return (
     <html lang="en" className="dark">
-      <body className="mx-4 sm:max-w-4xl sm:mx-auto min-h-screen dark:bg-gradient-to-tr dark:bg-gray-900 relative">
+      <body className="mx-4 sm:max-w-4xl sm:mx-auto min-h-screen dark:bg-gradient-to-tr dark:bg-zinc-900 relative">
         <Header />
         <>
           <FlareCursor />

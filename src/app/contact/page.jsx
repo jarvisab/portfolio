@@ -30,7 +30,6 @@ export default function Contact() {
 
          <h3 className="my-3 text-2xl text-center pb-2 text-gd">Contact me!</h3>
 
-
          <div className="flex flex-col mx-auto">
             <div className="flex justify-center items-center mt-4 mb-6">
 
@@ -63,7 +62,7 @@ export default function Contact() {
                   />
                   <motion.button
                      type="submit"
-                     className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-white bg-[#212f4d] hover:bg-gradient-to-r from-blue-400 to-sky-500"
+                     className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-black bg-blue-100 hover:bg-gradient-to-r from-blue-200 to-blue-300"
                      variants={buttonVariants}
                      whileHover="hover"
                   >

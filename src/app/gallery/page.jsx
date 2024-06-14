@@ -11,7 +11,7 @@ export default function Gallery() {
 
       {galleries.map((gallery, galleryIndex) => (
         <div key={galleryIndex}>
-          <div className="flex items-center justify-between bg-slate-200 dark:bg-slate-700 rounded-md my-4">
+          <div className="flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md my-4">
             <h4 className="font-bold px-4 py-2 text-slate-700 text-gd text-lg">
               {gallery.title}
             </h4>
@@ -23,7 +23,7 @@ export default function Gallery() {
                 <PhotoView key={imgIndex} src={imgSrc}>
                   <img
                     src={imgSrc}
-                    alt=""
+                    alt={`${gallery.title} ${imgIndex}`}
                     style={{ height: '120px' }}
                     className="galleries-img cursor-pointer"
                   />

@@ -19,7 +19,7 @@ export default function Timelines() {
                   {item.role}
                 </h3>
                 <a href={`https://www.google.com/search?q=${encodeURIComponent(item.workplace)}`} target="_blank" rel="noopener noreferrer">
-                  <span className='max-lg:hidden bg-slate-900 cursor-pointer rounded-md px-1'>
+                  <span className='max-lg:hidden bg-zinc-800 cursor-pointer rounded-md px-1'>
                     @ {item.workplace}
                   </span>
                 </a>
