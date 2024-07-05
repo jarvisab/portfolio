@@ -1,11 +1,27 @@
+/* Importing Google Fonts and Tailwind CSS ================== */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&family=Ubuntu+Mono:wght@400;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom font face definition ================== */
+@font-face {
+  font-family: 'MonoLight';
+  src: url('/fonts/MonoLight.ttf');
+}
+
+@font-face {
+  font-family: 'MonoRegular';
+  src: url('/fonts/MonoRegular.ttf');
+}
+
+.button-test {
+  @apply flex items-center px-4 py-2 bg-transparent hover:bg-blue-300 hover:bg-opacity-75 text-white rounded transition duration-300 border-2 hover:border-transparent
+}
+
+/* Global ================== */
 * {
-  font-family: "Rubik", sans-serif;
+  font-family: 'MonoLight';
   scroll-behavior: smooth;
 }
 
@@ -13,22 +29,49 @@ svg {
   @apply dark:fill-white;
 }
 
+/* Layout styles ================== */
+.section-boilerplate {
+  @apply py-3 sm:mx-3 lg:mx-0;
+}
+
+.card-boilerplate {
+  @apply flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md my-4;
+}
+
+/* Text and title styles ================== */
 .text-gd {
   @apply dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-tr dark:text-blue-100 tracking-wide;
 }
 
+.page-title {
+  font-family: 'MonoRegular';
+  @apply my-3 text-2xl text-center pb-2 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-tr dark:text-blue-100 tracking-wide;
+}
+
 .title {
+  font-family: 'MonoRegular';
   @apply text-2xl text-slate-800 border-b py-2 text-gd;
 }
 
+/* Navigation and link styles ================== */
+
+.navlink-active {
+  @apply md:border-2 border-x-2 bg-zinc-800
+}
+
 .menu-link {
-  @apply max-md:py-2 md:py-1 md:ml-2 px-3 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition duration-300 rounded;
+  @apply text-black dark:text-white max-md:py-2 md:py-1 md:mx-1 px-3 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition duration-300 rounded;
 }
 
 .cv-cl {
   @apply flex justify-center items-center gap-2 dark:border px-4 py-1 rounded-md hover:bg-blue-100 hover:dark:text-zinc-900 transition-all duration-300 dark:text-neutral-200 dark:hover:bg-blue-200;
 }
 
+.projects-link {
+  @apply hover:bg-slate-300 dark:hover:bg-slate-800 transition duration-300 py-2 px-3 rounded-md;
+}
+
+/* Icon and interactive element styles ================== */
 .skills-icon {
   @apply text-white border p-2 rounded text-lg sm:text-xl flex justify-center transition duration-300 cursor-pointer;
 }
@@ -45,36 +88,67 @@ svg {
   @apply border rounded-full p-2 hover:bg-slate-200 transition duration-300 dark:hover:bg-slate-600;
 }
 
-.projects-link{
-  @apply hover:bg-slate-300 dark:hover:bg-slate-800 transition duration-300 py-2 px-3 rounded-md;
-}
-
-.projects-img {
+/* Image and media styles ================== */
+.photo-view-img {
   @apply border rounded-md hover:opacity-70 transition duration-300 cursor-pointer;
-  width:  100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.others-project {
-  @apply rounded-md border hover:opacity-70 transition duration-300;
+/* Timelines Styling ================== */
+
+.timeline {
+  @apply flex flex-col relative border-l border-stone-200 dark:border-stone-700 mt-4;
 }
 
-.galleries-img {
-  @apply border rounded-md hover:opacity-70 transition duration-300 cursor-pointer;
-  width:  100%;
-  height: 100%;
-  object-fit: cover;
+.timeline-item {
+  @apply my-2 ml-4 relative;
 }
 
+.timeline-marker {
+  @apply absolute w-2 h-3 bg-stone-200 rounded-r-full left-px top-[1.2rem] ml-[-1rem];
+}
+
+.item-header {
+  @apply flex flex-wrap gap-4 flex-row items-center justify-start text-xs md:text-sm rounded-lg pt-2;
+}
+
+.year-badge {
+  @apply inline-block px-2 py-1 font-semibold text-white dark:text-stone-900 bg-stone-900 dark:bg-white rounded-md;
+}
+
+.role {
+  @apply text-lg font-semibold text-stone-900 dark:text-white;
+}
+
+.workplace-link {
+  @apply max-lg:hidden bg-zinc-800 cursor-pointer rounded-md px-1;
+}
+
+.duration {
+  @apply max-lg:hidden text-sm font-normal leading-none text-stone-400 dark:text-stone-500;
+}
+
+.mobile-info {
+  @apply lg:hidden my-4 text-sm font-normal leading-none text-stone-400 dark:text-stone-500;
+}
+
+.mobile-workplace {
+  @apply lg:hidden text-stone-200 mr-4;
+}
+
+.summary {
+  @apply my-2 text-base font-normal text-stone-500 dark:text-stone-400;
+}
+
+/* Flare Cursor ================== */
 .flare {
   @apply fixed border-2 border-blue-200 rounded-full mix-blend-screen pointer-events-none;
   transform: translate(-50%, -50%);
   z-index: 999999;
   backdrop-filter: blur(1px);
-  background-color: transparent;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  cursor: none;
 }
 
 @media screen and (max-width: 768px) {

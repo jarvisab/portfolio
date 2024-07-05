@@ -1,7 +1,8 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 
-// This functional component represents a custom cursor with a flare effect.
-function FlareCursor() {
+export default function FlareCursor() {
   // State to track the current cursor position (x, y coordinates).
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -50,6 +51,3 @@ function FlareCursor() {
     ></div>
   );
 }
-
-// Export the FlareCursor component to be used in other parts of the application.
-export default FlareCursor;
