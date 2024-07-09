@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -13,6 +13,28 @@ const truncateString = (str, maxLength) => {
     return str;
 };
 
+const ProjectImage = ({ src, alt }) => (
+    <div className="aspect-square h-32">
+        <img
+            src={src}
+            alt={alt}
+            className="rounded-md h-full w-full object-cover"
+        />
+    </div>
+);
+
+const ProjectDetails = ({ title, description, linkText }) => (
+    <div className="space-y-2 place-self-center h-full">
+        <h3 className="max-md:text-lg text-xl text-gd top-0">{title}</h3>
+        <p className="max-md:text-sm text-gd text-slate-600 dark:text-neutral-300">
+            {description}
+        </p>
+        <span className="text-blue-400 hover:underline bottom-0">
+            {linkText}
+        </span>
+    </div>
+);
+
 const FeaturedCard = () => {
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
@@ -24,14 +46,17 @@ const FeaturedCard = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const featured = projects[currentProjectIndex];
-    const imageSrc = featured.img[0];
-    const projectID = '/projects#project-' + featured.id;
-    const projectTitle = featured.title;
+    const featuredProject = projects[currentProjectIndex];
+    const imageSrc = featuredProject.img[0];
+    const projectID = `/projects#project-${featuredProject.id}`;
+    const projectTitle = featuredProject.title;
     const featuredTitle = "Featured Project";
-    const projectDescription = featured.desc[0];
+    const projectDescription = featuredProject.desc[0];
 
-    const displayedText = truncateString(projectDescription, 64);
+    const displayedText = useCallback(
+        () => truncateString(`${projectTitle} ${projectDescription}`, 64),
+        [projectTitle, projectDescription]
+    );
 
     return (
         <div className="w-full mb-8">
@@ -40,28 +65,17 @@ const FeaturedCard = () => {
                     <div className='items-center rounded-lg border bg-card p-4 cursor-pointer'>
                         <motion.div
                             key={currentProjectIndex}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial={{ opacity: 0, filter: 'blur(5px)' }}
+                            animate={{ opacity: 1, filter: 'blur(0px)' }}
                             transition={{ duration: 1.5 }}
                             className="grid grid-cols-[1fr_2fr] gap-4"
                         >
-                            <div className="h-32">
-                                <img
-                                    src={imageSrc}
-                                    alt={projectTitle}
-                                    className="rounded-md h-full w-full object-cover"
-                                />
-                            </div>
-                            <div className="space-y-2 place-self-center h-full">
-                                <h3 className="max-md:text-lg text-xl text-gd top-0">{featuredTitle}</h3>
-                                <p className="max-md:text-sm text-gd text-slate-600 dark:text-neutral-300">
-                                    {displayedText}
-                                </p>
-                                <span className="text-blue-400 hover:underline bottom-0">
-                                    (Click to See More)
-                                </span>
-                            </div>
+                            <ProjectImage src={imageSrc} alt={projectTitle} />
+                            <ProjectDetails
+                                title={featuredTitle}
+                                description={displayedText()}
+                                linkText="(Click to See More)"
+                            />
                         </motion.div>
                     </div>
                 </Link>
