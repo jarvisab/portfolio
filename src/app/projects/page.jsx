@@ -1,19 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 
+import SectionTemplate from "../section";
 import { projects, otherProjects } from "@/data";
-import { TitleCard, ImagesBrowser, DescriptionList } from "@/components/ui";
+import {
+  TitleCard,
+  ImagesBrowser,
+  DescriptionList
+} from "@/components/ui";
 
 export default function Projects() {
   return (
-    <section className="section-boilerplate projects">
-      <h3 className="page-title">Some of my Relevant Activities and Projects</h3>
-
+    <SectionTemplate titleText={"Some of my Relevant Activities and Projects"}>
       <>
-
         {projects.map((item) => (
-
-          <div id={'project-'+item.id} key={item.id}>
-
+          <div id={"project-" + item.id} key={item.id}>
             <TitleCard
               title={item.title}
               isUsingLink={true}
@@ -21,32 +21,18 @@ export default function Projects() {
               gitlink={item.gitHub}
             />
 
-            <ImagesBrowser
-              imagesList={item.img}
-              imgsTitle={item.title}
-            />
+            <ImagesBrowser imagesList={item.img} imgsTitle={item.title} />
 
-            <DescriptionList
-              description={item.desc}
-            />
+            <DescriptionList description={item.desc} />
           </div>
-          
         ))}
-
       </>
 
       <div className="mb-1">
+        <TitleCard title={"Others (Websites, Apps, Tests, etc)"} />
 
-        <TitleCard
-          title={"Others (Websites, Apps, Tests, etc)"}
-        />
-
-        <ImagesBrowser
-          imagesList={otherProjects}
-          imgsTitle={'Others'}
-        />
-
+        <ImagesBrowser imagesList={otherProjects} imgsTitle={"Others"} />
       </div>
-    </section>
+    </SectionTemplate>
   );
 }

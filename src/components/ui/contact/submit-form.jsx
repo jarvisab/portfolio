@@ -21,7 +21,6 @@ const SubmitForm = (
                <input
                   type="text"
                   name="name"
-                  required
                   placeholder={namePlaceholder}
                   className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
                />

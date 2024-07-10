@@ -1,16 +1,9 @@
-import {
-  AboutMe,
-  Skills,
-  Timelines,
-  Gallery
-} from "@/components/ui";
+import SectionTemplate from "../section";
+import { AboutMe, Skills, Timelines, Gallery } from "@/components/ui";
 
 export default function About() {
   return (
-    <section className="section-boilerplate">
-
-      <h3 className="page-title">Get to Know Me!</h3>
-
+    <SectionTemplate titleText={"Get to Know me!"}>
       <div className="h-64 card-boilerplate">
         <img
           src="me.webp"
@@ -26,7 +19,6 @@ export default function About() {
       <Skills />
 
       <Gallery />
-
-    </section>
+    </SectionTemplate>
   );
 }
