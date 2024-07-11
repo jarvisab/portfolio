@@ -3,7 +3,7 @@ import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
 
 const TitleCard = ({ title, isUsingLink = false, livelink = '', gitlink = '' }) => {
     return (
-        <div className="card-boilerplate">
+        <div className="card-boilerplate border-b-2 md:border-r-2">
             <h4 className="font-bold px-4 py-2 text-slate-700 text-gd text-lg">
                 {title}
             </h4>

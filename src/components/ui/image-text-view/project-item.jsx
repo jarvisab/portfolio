@@ -1,11 +1,43 @@
-import { TitleCard, ImagesBrowser, DescriptionList } from "@/components/ui";
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import {
+  TitleCard,
+  ImagesBrowser,
+  DescriptionList
+} from "@/components/ui";
 
 export default function ProjectItem({ project }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["center end", "0.3 center"]
+  });
+
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((value) => {
+      console.log(project.id + ': ' + value);
+      setIsActive(value > 0.9);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [project.id, scrollYProgress]);
+
   return (
-    <div
+    <motion.div
       id={"project-" + project.id}
       key={project.id}
-      className="my-6 rounded-md max-md:p-2 md:p-4 hover:border-b-4 hover:border-r-4 hover:-translate-y-4 md:hover:border-t md:hover:border-l"
+      ref={ref}
+      className={`project-card ${isActive ? 'project-stay' : 'project-move'}`}
+      style={{
+        opacity: scrollYProgress,
+        scale: scrollYProgress,
+      }}
     >
       <TitleCard
         title={project.title}
@@ -17,6 +49,7 @@ export default function ProjectItem({ project }) {
       <ImagesBrowser imagesList={project.img} imgsTitle={project.title} />
 
       <DescriptionList description={project.desc} />
-    </div>
+
+    </motion.div>
   );
 }

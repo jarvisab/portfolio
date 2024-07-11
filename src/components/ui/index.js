@@ -1,5 +1,6 @@
 // Projects
 export { default as ProjectItem } from "./image-text-view/project-item"
+export { default as GalleryItem } from "./image-text-view/gallery-item"
 export { default as TitleCard } from "./image-text-view/title-card";
 export { default as ImagesBrowser } from "./image-text-view/images-browser";
 export { default as DescriptionList } from "./image-text-view/project-description";

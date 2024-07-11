@@ -2,7 +2,7 @@
 
 import SectionTemplate from "../section";
 import { projects, otherProjects } from "@/data";
-import { TitleCard, ImagesBrowser, ProjectItem } from "@/components/ui";
+import { ProjectItem, GalleryItem } from "@/components/ui";
 
 export default function Projects() {
   return (
@@ -14,9 +14,12 @@ export default function Projects() {
       </>
 
       <div className="mb-1">
-        <TitleCard title={"Others (Websites, Apps, Tests, etc)"} />
 
-        <ImagesBrowser imagesList={otherProjects} imgsTitle={"Others"} />
+        <GalleryItem
+          gTitle={"Others (Websites, Apps, Tests, etc)"}
+          gImgs={otherProjects}
+        />
+
       </div>
     </SectionTemplate>
   );

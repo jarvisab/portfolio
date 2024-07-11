@@ -4,7 +4,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ImagesBrowser = ({ imagesList, imgsTitle }) => {
   return (
-    <div className="my-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+    <div className="max-md:px-2 my-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
       <PhotoProvider>
         {imagesList.map((imgSrc, imgIndex) => (
           <PhotoView key={imgIndex} src={imgSrc}>

@@ -47,7 +47,7 @@ svg {
 
 
 .card-boilerplate {
-  @apply flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md mb-4;
+  @apply flex items-center justify-between border-zinc-900 dark:border-blue-100 rounded-md mb-4;
 }
 
 /* Text and title styles ================== */
@@ -173,4 +173,16 @@ svg {
 .flare.pointer {
   @apply opacity-0;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* Project Styling ================== */
+.project-card{
+  @apply my-6 rounded-lg max-md:p-2 md:p-4;
+}
+.project-move {
+  @apply md:border;
+}
+.project-stay {
+  @apply border-blue-100 border-t border-r-4 border-b-4 border-l -translate-y-4;
+
 }

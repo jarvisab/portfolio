@@ -1,5 +1,5 @@
 import { galleries } from '@/data';
-import { TitleCard, ImagesBrowser } from "@/components/ui";
+import { GalleryItem } from '@/components/ui';
 
 
 export default function Gallery() {
@@ -9,13 +9,9 @@ export default function Gallery() {
             {galleries.map((gallery, galleryIndex) => (
                 <div key={galleryIndex}>
 
-                    <TitleCard
-                        title={gallery.title}
-                    />
-
-                    <ImagesBrowser
-                        imagesList={gallery.imgs}
-                        imgsTitle={gallery.title}
+                    <GalleryItem
+                        gTitle={gallery.title}
+                        gImgs={gallery.imgs}
                     />
 
                 </div>

@@ -4,7 +4,7 @@ import { AboutMe, Skills, Timelines, Gallery } from "@/components/ui";
 export default function About() {
   return (
     <SectionTemplate titleText={"Get to Know me!"}>
-      <div className="h-64 card-boilerplate">
+      <div className="h-64 card-boilerplate border-2">
         <img
           src="me.webp"
           alt="Picture of me, obviously."
