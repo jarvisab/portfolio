@@ -5,7 +5,7 @@ export default function ProjectItem({ project }) {
     <div
       id={"project-" + project.id}
       key={project.id}
-      className="my-6 rounded-md max-md:p-2 md:p-4 hover:border hover:border-b-4 hover:border-r-4 hover:-translate-y-4"
+      className="my-6 rounded-md max-md:p-2 md:p-4 hover:border-b-4 hover:border-r-4 hover:-translate-y-4 md:hover:border-t md:hover:border-l"
     >
       <TitleCard
         title={project.title}

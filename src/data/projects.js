@@ -2,6 +2,21 @@ const PREFIX_LOCATION = "/assets/projects/";
 
 let projects = [
   {
+    id: 9,
+    title: "curhat - Share your thoughts or randomly read others' musings.",
+    liveLink: "https://curhat.pages.dev/",
+    gitHub: "https://github.com/jarvisab/curhat",
+    img: [
+      "1.webp",
+      "2.webp"
+    ],
+    desc: [
+      "A simple and straightforward platform for sharing and venting out thoughts, inspired by the Indonesian term “Curhat“.",
+      "Users can explore a variety of random messages shared by others",
+      "Users can share their own thoughts publicly!"
+    ],
+  },
+  {
     id: 8,
     title: "QA Docs in my recent internship",
     liveLink: "",
