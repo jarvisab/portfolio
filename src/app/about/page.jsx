@@ -8,7 +8,7 @@ export default function About() {
         <img
           src="me.webp"
           alt="Picture of me, obviously."
-          className="w-full h-full object-cover rounded-sm"
+          className="grayscale w-full h-full object-cover rounded-sm"
         />
       </div>
 

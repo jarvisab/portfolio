@@ -31,16 +31,23 @@ svg {
 /* Layout styles ================== */
 .section-boilerplate {
   @apply py-3 sm:mx-3 lg:mx-0;
-  animation: fadeIn 1.5s ease-in forwards;
+  animation: blurIn 0.8s ease-in forwards;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes blurIn {
+    0% { 
+        filter: blur(10px); 
+        opacity: 0; 
+    }
+    100% { 
+        filter: blur(0); 
+        opacity: 1; 
+    }
 }
+
 
 .card-boilerplate {
-  @apply flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md my-4;
+  @apply flex items-center justify-between border-2 border-zinc-900 dark:border-blue-100 rounded-md mb-4;
 }
 
 /* Text and title styles ================== */

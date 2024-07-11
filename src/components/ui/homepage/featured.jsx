@@ -48,7 +48,7 @@ const FeaturedCard = () => {
 
     const featuredProject = projects[currentProjectIndex];
     const imageSrc = featuredProject.img[0];
-    const projectID = `/projects#project-${featuredProject.id}`;
+    const projectID = `/projects`; // #project-${featuredProject.id}
     const projectTitle = featuredProject.title;
     const featuredTitle = "Featured Project";
     const projectDescription = featuredProject.desc[0];
